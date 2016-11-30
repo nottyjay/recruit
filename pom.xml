@@ -6,7 +6,7 @@
     <artifactId>parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>recruit-gather</module>
+        <module>gather</module>
         <module>kafka</module>
         <module>web</module>
     </modules>

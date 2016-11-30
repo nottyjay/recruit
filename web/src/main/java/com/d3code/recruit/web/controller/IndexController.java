@@ -1,6 +1,8 @@
 package com.d3code.recruit.web.controller;
 
 import com.d3code.recruit.gather.service.WebHttpService;
+import com.d3code.recruit.kafka.config.KafkaConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

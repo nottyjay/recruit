@@ -20,6 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -35,7 +36,8 @@ public class LagouWebHttpServiceImpl implements WebHttpService {
 
     private static final Logger LOG = LoggerFactory.getLogger(LagouWebHttpServiceImpl.class);
 
-    private InfomationHandle handle = new LagouInfomationHandle();
+    @Resource(name = "lagouInfomationHandle")
+    private InfomationHandle handle;
 
     private static final Integer CONNECT_TIMEOUT = 10 * 1000;
     private static final Charset UTF8 = Charset.forName("UTF-8");
