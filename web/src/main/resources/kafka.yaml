@@ -1,9 +1,9 @@
 kafka:
-    bootstrap_servers: kafka1:9092
+    bootstrap_servers: 192.168.2.96:9092
     acks: all
     retries: 0
     batch_size: 16384
     linger_ms: 1
     buffer_memory: 33554432
     key_serializer: org.apache.kafka.common.serialization.StringSerializer
-    value_serializer: org.apache.kafka.common.serialization.BytesSerializer
+    value_serializer: org.apache.kafka.common.serialization.StringSerializer

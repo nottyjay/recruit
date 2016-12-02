@@ -1,6 +1,6 @@
 package com.d3code.recruit.gather.serializer;
 
-import net.sf.ehcache.CacheException;
+import com.d3code.recruit.gather.exception.GatherException;
 import org.nustaq.serialization.FSTObjectInput;
 import org.nustaq.serialization.FSTObjectOutput;
 import org.slf4j.Logger;
@@ -56,7 +56,7 @@ public class FSTSerializer implements Serializer {
             in = new FSTObjectInput(new ByteArrayInputStream(bytes));
             return in.readObject();
         } catch (ClassNotFoundException e) {
-            throw new CacheException(e);
+            throw new GatherException(e);
         } finally {
             if(in != null)
                 try {

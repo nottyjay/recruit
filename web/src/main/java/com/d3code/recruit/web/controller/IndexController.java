@@ -1,8 +1,6 @@
 package com.d3code.recruit.web.controller;
 
 import com.d3code.recruit.gather.service.WebHttpService;
-import com.d3code.recruit.kafka.config.KafkaConfig;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +23,7 @@ public class IndexController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
-        return "index/index";
+        return "/index/index";
     }
 
     @RequestMapping(value = "/spider", method = RequestMethod.GET)

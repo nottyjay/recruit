@@ -1,6 +1,6 @@
 package com.d3code.recruit.gather.serializer;
 
-import net.sf.ehcache.CacheException;
+import com.d3code.recruit.gather.exception.GatherException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,7 +51,7 @@ public class JavaSerializer implements Serializer {
             ois = new ObjectInputStream(bais);
             return ois.readObject();
         } catch (ClassNotFoundException e) {
-            throw new CacheException(e);
+            throw new GatherException(e);
         } finally {
             if(ois != null)
                 try {

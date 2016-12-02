@@ -1,9 +1,10 @@
 package com.d3code.recruit.web.handle;
 
 import com.d3code.recruit.gather.handle.InfomationHandle;
-import com.d3code.recruit.kafka.config.KafkaConfig;
+import com.d3code.recruit.gather.util.JsonUtil;
 import com.d3code.recruit.web.bean.CompanyInfo;
 import com.d3code.recruit.web.bean.JobInfo;
+import com.d3code.recruit.web.configuration.KafkaConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
@@ -64,7 +65,7 @@ public class LagouInfomationHandle implements InfomationHandle {
                 jobInfo.setSalary((String)job.get("salary"));
                 jobInfo.setCreateTime((String)job.get("createTime"));
                 jobInfo.setUrl("https://www.lagou.com/jobs/" + job.get("positionId") + ".html");
-                producer.send(new ProducerRecord<>("lagou", "job", jobInfo));
+//                producer.send(new ProducerRecord<>("lagou", "job", JsonUtil.toJson(jobInfo)));
             }
         } catch (IOException e) {
             e.printStackTrace();
